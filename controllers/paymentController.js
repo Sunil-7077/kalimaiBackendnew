@@ -54,7 +54,7 @@ export const paymentVarification =async (req,res)=>{
     });
 
     res.redirect(
-      `https://kalimai.netlify.app/success?reference=${razorpay_payment_id}`
+      `https://kalimaitrust.netlify.app/success?reference=${razorpay_payment_id}`
 
     );
     // SendEmail("subhe@gmail.com",'12343254');
