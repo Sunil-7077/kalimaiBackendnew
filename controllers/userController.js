@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { User } from "../models/userModel.js";
+import { clientData } from "../models/userModel.js";
 
 
 const storeUser = async(req,res)=>{
@@ -9,7 +9,7 @@ const storeUser = async(req,res)=>{
       throw res.status(400).json({error:"please enter required credentials"})
    }
    
-   const user = await User.create({
+   const user = await clientData.create({
     name,
     email,
     mobileNo,
@@ -22,13 +22,13 @@ const storeUser = async(req,res)=>{
    if (!user._id) {
     throw res.status(400,{error:"user not created try again"})
    }
-
+   user.save();
     res.status(200).json({messege:"user saved successfully",user})
 }
 
 const getUser = async(req,res)=>{
 
-   const users= await User.find();
+   const users= await clientData.find();
 
    if (!users || users.length === 0) {
      return res.status(400).json({error:"user not found"});

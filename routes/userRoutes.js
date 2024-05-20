@@ -3,7 +3,7 @@ import {storeUser,getUser} from "../controllers/userController.js";
 
 const router= express.Router();
 
-router.route("/store").post(storeUser)
+router.route("/client").post(storeUser)
 router.route("/getuser").get(getUser)
 //router.route("/paymentVarification").post(paymentVarification)
 
