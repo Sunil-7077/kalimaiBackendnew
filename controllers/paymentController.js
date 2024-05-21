@@ -1,7 +1,7 @@
 import { instance } from "../server.js"
 import crypto from "crypto";
 import { Payment } from "../models/paymentModel.js";
-import { SendEmail } from "../utils/SendMail.js";
+
 
 
 export const checkout =async (req,res)=>{

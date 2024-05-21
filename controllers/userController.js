@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 import { clientData } from "../models/userModel.js";
+import sendMail from "../helpers/sendMail.js";
+
 
 
 const storeUser = async(req,res)=>{
@@ -18,15 +20,18 @@ const storeUser = async(req,res)=>{
     address,
     pan : pan || ""
    });
+  
 
    if (!user._id) {
     throw res.status(400,{error:"user not created try again"})
    }
-   user.save();
+  await user.save();
+  sendMail(email,"Welcome to kalimai trust",`Hi ${name} thank you for your support`)
     res.status(200).json({messege:"user saved successfully",user})
 }
 
 const getUser = async(req,res)=>{
+
 
    const users= await clientData.find();
 

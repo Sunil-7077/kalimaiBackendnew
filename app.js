@@ -3,7 +3,7 @@ import { config } from "dotenv"
 import cors from "cors"
 import mongoose from "mongoose";
 import paymentRoute from "./routes/paymentRoutes.js";
-import {SendEmail} from "./utils/SendMail.js";
+
 config({path:"./config/config.env"})
 
 export const app = express()
