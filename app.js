@@ -3,7 +3,7 @@ import { config } from "dotenv"
 import cors from "cors"
 import mongoose from "mongoose";
 import paymentRoute from "./routes/paymentRoutes.js";
-
+import userRouter from "./routes/userRoutes.js";
 config({path:"./config/config.env"})
 
 export const app = express()
@@ -17,7 +17,7 @@ app.use("/api",paymentRoute)
 //http://localhost:4000/api/paymentVarification
 
 //routes
-import userRouter from "./routes/userRoutes.js"
+
 
 app.use("/api",userRouter) // http://localhost:4000/api/user/store
 
