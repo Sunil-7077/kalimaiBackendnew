@@ -62,7 +62,7 @@ timestamps:true
 const contactData = mongoose.model('contactData',conatctSchema);
 
 
-app.post('/api/contact', async (req, res) => {
+app.post('https://kalimaibackendnew01.onrender.com/api/contact', async (req, res) => {
     try {
       const { name, mail, sub,msg } = req.body;
   
