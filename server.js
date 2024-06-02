@@ -11,7 +11,8 @@ export const instance = new Razorpay({
     key_id:process.env.RAZORPAY_API_KEY,
     key_secret:process.env.RAZORPAY_API_SECRET,
 });
+const port = process.env.PORT||4000
 
-app.listen(process.env.PORT,()=>
-console.log(`Server is working on ${process.env.PORT}`)
+app.listen(port,()=>
+console.log(`Server is working on ${port}`)
 )
